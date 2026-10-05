@@ -1,8 +1,8 @@
 import pool from '../config/db.js' ;
 
-export async function createManager(email , hashedPassword , name , phn ){
+export async function createManager(email , hashedPassword , name  ){
     const result = await pool.query(
-        `insert into manager_auth (email , pass , name , phn) values (? , ? , ? , ?)`, [email,hashedPassword,name,phn]
+        `insert into manager_auth (email , pass , name ) values (? , ? , ? )`, [email,hashedPassword,name]
     )
     return result ;
 }
